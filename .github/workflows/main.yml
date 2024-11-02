@@ -6,6 +6,7 @@ on:
 env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKERHUB_KEY: ${{ secrets.DOCKER_KEY }}
+  API_KEY: ${{ secrets.API_KEY }}
   IMAGE_NAME: node-weather
 
 jobs:
