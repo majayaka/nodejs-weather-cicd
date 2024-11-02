@@ -6,8 +6,10 @@
 replicaCount: 1
 
 image:
-  repository: majayaka/node-weather
+  repository: ayakayu/node-weather
   pullPolicy: IfNotPresent
+  
+
   # Overrides the image tag whose default is the chart appVersion.
   #tag: "{{ .Values.env.APP_VERSION }}"
 imagePullSecrets: []
