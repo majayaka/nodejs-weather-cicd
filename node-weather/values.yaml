@@ -17,7 +17,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 env:
-  APP_VERSION: 5d8b6e893ff023cd5a69161ff7311828b9890434
+  APP_VERSION: 445b33f19074d9b4fa29dc40c46698d705688eee
 
 #This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/
 serviceAccount:
