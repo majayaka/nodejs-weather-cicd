@@ -1,11 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
+const client = require('prom-client'); 
 const app = express()
 
 require('dotenv').config(); // Load API key from .env
 
 const apiKey = process.env.API_KEY; // Fetch API key from .env file
+
+// Create un instance to Prometheus Metrics
+const collectDefaultMetrics = client.collectDefaultMetrics;
+collectDefaultMetrics(); // Collect default metrics
+
+// Add the endpoint of metrics
+app.get('/metrics', (req, res) => {
+  res.set('Content-Type', client.register.contentType);
+  res.end(client.register.metrics());
+});
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
